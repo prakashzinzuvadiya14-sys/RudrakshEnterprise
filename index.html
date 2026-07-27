@@ -132,22 +132,32 @@
                         <span class="hidden sm:inline">My Cart</span>
                         <span id="headerCartBadge" class="bg-stone-900 text-white font-bold rounded-full w-5 h-5 flex items-center justify-center text-[10px]">0</span>
                     </button>
-                    
-                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2 rounded-lg text-brand-blue hover:bg-orange-50 focus:outline-none">
-                        <i class="fa-solid fa-bars text-xl"></i>
-                    </button>
                 </div>
             </div>
         </div>
-
-        <!-- MOBILE MENU DRAWER -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 pt-2 pb-6 space-y-3">
-            <a href="#featured" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg font-medium text-brand-blueDark hover:bg-orange-50 hover:text-brand-orange">Top 2 Products</a>
-            <a href="#combo" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg font-medium text-brand-blueDark hover:bg-orange-50 hover:text-brand-orange">Wellness Combo Pack</a>
-            <a href="#clinic" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg font-medium text-brand-blueDark hover:bg-orange-50 hover:text-brand-orange">Junagadh Clinic Address</a>
-            <a href="#reviews" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-lg font-medium text-brand-blueDark hover:bg-orange-50 hover:text-brand-orange">Patient Reviews</a>
-        </div>
     </header>
+
+    <!-- MOBILE BOTTOM NAVIGATION BAR (Replaces Hamburger Menu) -->
+    <nav id="mobileBottomNav" class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-stone-200 py-2 px-4 md:hidden transition-transform duration-300 shadow-2xl">
+        <div class="grid grid-cols-4 gap-1 text-center">
+            <a href="#featured" class="flex flex-col items-center py-1 text-stone-500 hover:text-brand-orange active:text-brand-orange transition-colors group">
+                <i class="fa-solid fa-fire text-base group-hover:scale-110 transition-transform mb-0.5"></i>
+                <span class="text-[10px] font-semibold tracking-tight">Top 2</span>
+            </a>
+            <a href="#combo" class="flex flex-col items-center py-1 text-stone-500 hover:text-brand-orange active:text-brand-orange transition-colors group">
+                <i class="fa-solid fa-gift text-base group-hover:scale-110 transition-transform mb-0.5"></i>
+                <span class="text-[10px] font-semibold tracking-tight">Save Combo</span>
+            </a>
+            <a href="#clinic" class="flex flex-col items-center py-1 text-stone-500 hover:text-brand-orange active:text-brand-orange transition-colors group">
+                <i class="fa-solid fa-location-dot text-base group-hover:scale-110 transition-transform mb-0.5"></i>
+                <span class="text-[10px] font-semibold tracking-tight">Clinic</span>
+            </a>
+            <button onclick="toggleCartDrawer()" class="flex flex-col items-center py-1 text-stone-500 hover:text-brand-orange active:text-brand-orange transition-colors group relative">
+                <i class="fa-solid fa-cart-shopping text-base group-hover:scale-110 transition-transform mb-0.5"></i>
+                <span class="text-[10px] font-semibold tracking-tight">My Cart</span>
+            </button>
+        </div>
+    </nav>
 
     <section class="relative overflow-hidden bg-white py-10 md:py-16 border-b border-stone-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -157,19 +167,20 @@
                     <i class="fa-solid fa-certificate text-brand-orange"></i>
                     <span>Official Online Store • Junagadh Clinic</span>
                 </div>
+                <!-- HERO TITLE WITHOUT UNDERLINE -->
                 <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-blueDark leading-tight">
-                    Restore Your Health With <span class="text-brand-orange underline decoration-brand-orange decoration-wavy underline-offset-8">2 Flagship Herbal Formulations</span>
+                    Restore Your Health With <span class="text-brand-orange">2 Flagship Herbal Formulations</span>
                 </h1>
                 <p class="text-brand-blueDark/80 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed font-poppins">
                     Crafted by Vaidyas near Sardar Baug, Junagadh. Designed specifically to resolve digestive ailments, chronic gas, exhaustion, and nerve fatigue naturally.
                 </p>
             </div>
 
-            <!-- HERO 2-COLUMN GRID PRODUCTS WITH ENHANCED UI & CORNER TAGS -->
-            <div id="featured" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+            <!-- HERO 2-COLUMN GRID PRODUCTS WITH PREMIUM BORDERS & ANIMATED HOVER -->
+            <div id="featured" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
                 
                 <!-- ITEM 1: VITAMIN B-12 HERBAL POWDER -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-orange-300 hover:border-brand-orange transition-all shadow-xl hover:shadow-2xl flex flex-col justify-between relative group overflow-hidden">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-orange-200 hover:border-brand-orange transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-2xl flex flex-col justify-between relative group overflow-hidden">
                     
                     <!-- CORNER BEST SELLER TAG -->
                     <div class="absolute top-0 right-0 bg-gradient-to-l from-brand-orange to-amber-500 text-white text-[10px] font-extrabold px-4 py-1.5 rounded-bl-2xl shadow-md uppercase tracking-wider z-10 flex items-center gap-1">
@@ -177,11 +188,11 @@
                     </div>
                     
                     <div>
-                        <div class="product-img-container w-full h-64 rounded-2xl overflow-hidden bg-stone-50 mb-6 flex items-center justify-center p-3 relative border border-orange-100 group-hover:bg-orange-50/30 transition">
+                        <div class="product-img-container w-full h-64 rounded-2xl overflow-hidden bg-stone-50 mb-6 flex items-center justify-center p-3 relative border border-orange-100 group-hover:bg-orange-50/40 transition-colors duration-300">
                             <img src="https://rudrakshayurvedic.in/cdn/shop/files/WhatsAppImage2026-06-09at21.49.30_1_af6ad7d7-787d-446f-9f0e-635d24fe5061.jpg?v=1783788398&width=1200" 
                                  alt="Vitamin B-12 Herbal Powder" 
                                  referrerpolicy="no-referrer"
-                                 class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-300"
+                                 class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                                  onerror="this.style.display='none'; document.getElementById('fallbackSvg1').classList.remove('hidden');">
                             
                             <!-- VECTOR SVG FALLBACK FOR GITHUB PAGES COMPATIBILITY -->
@@ -227,7 +238,7 @@
                 </div>
 
                 <!-- ITEM 2: NIRANT PACHAK CHURN -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-orange-300 hover:border-brand-orange transition-all shadow-xl hover:shadow-2xl flex flex-col justify-between relative group overflow-hidden">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border-2 border-orange-200 hover:border-brand-orange transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-2xl flex flex-col justify-between relative group overflow-hidden">
                     
                     <!-- CORNER BEST SALES TAG -->
                     <div class="absolute top-0 right-0 bg-gradient-to-l from-amber-500 to-brand-orange text-white text-[10px] font-extrabold px-4 py-1.5 rounded-bl-2xl shadow-md uppercase tracking-wider z-10 flex items-center gap-1">
@@ -235,11 +246,11 @@
                     </div>
                     
                     <div>
-                        <div class="product-img-container w-full h-64 rounded-2xl overflow-hidden bg-stone-50 mb-6 flex items-center justify-center p-3 relative border border-orange-100 group-hover:bg-orange-50/30 transition">
+                        <div class="product-img-container w-full h-64 rounded-2xl overflow-hidden bg-stone-50 mb-6 flex items-center justify-center p-3 relative border border-orange-100 group-hover:bg-orange-50/40 transition-colors duration-300">
                             <img src="https://rudrakshayurvedic.in/cdn/shop/files/WhatsAppImage2026-06-09at20.30.56_3_35b1a48d-66f5-4bcf-8a62-5a6f44662a22.jpg?v=1783788232&width=1200" 
                                  alt="Nirant Pachak Churn" 
                                  referrerpolicy="no-referrer"
-                                 class="max-h-full max-w-full object-contain group-hover:scale-105 transition duration-300"
+                                 class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                                  onerror="this.style.display='none'; document.getElementById('fallbackSvg2').classList.remove('hidden');">
 
                             <!-- VECTOR SVG FALLBACK FOR GITHUB PAGES COMPATIBILITY -->
@@ -288,10 +299,10 @@
         </div>
     </section>
 
-    <!-- COMBO DUO OFFER (BLUE BACKGROUND REMOVED -> REPLACED WITH VIBRANT ORANGE GRADIENT) -->
-    <section id="combo" class="py-12 bg-white relative overflow-hidden border-b border-stone-100">
+    <!-- COMBO DUO OFFER -->
+    <section id="combo" class="scroll-mt-24 py-12 bg-white relative overflow-hidden border-b border-stone-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-gradient-to-br from-brand-orange via-orange-600 to-amber-600 rounded-3xl p-6 sm:p-10 border-2 border-orange-300 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8 text-white">
+            <div class="bg-gradient-to-br from-brand-orange via-orange-600 to-amber-600 rounded-3xl p-6 sm:p-10 border-2 border-orange-300 shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-1 flex flex-col lg:flex-row items-center justify-between gap-8 text-white">
                 
                 <div class="space-y-3 text-center lg:text-left">
                     <span class="inline-block px-3 py-1 rounded-full bg-white text-brand-orange text-xs font-bold uppercase tracking-wider shadow">
@@ -336,7 +347,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 
                 <!-- DETAIL CARD 1 -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-md flex flex-col justify-between">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/90 hover:border-brand-orange/60 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex items-center justify-between border-b border-stone-100 pb-4">
                             <div>
@@ -376,7 +387,7 @@
                 </div>
 
                 <!-- DETAIL CARD 2 -->
-                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-md flex flex-col justify-between">
+                <div class="bg-white rounded-3xl p-6 sm:p-8 border border-stone-200/90 hover:border-brand-orange/60 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
                     <div class="space-y-4">
                         <div class="flex items-center justify-between border-b border-stone-100 pb-4">
                             <div>
@@ -421,18 +432,7 @@
     </section>
 
     <!-- CLINIC LOCATION & TRUST GRID -->
-    <section id="clinic" class="py-16 bg-white border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
-            <!-- Address Highlight Banner -->
-            <div class="bg-gradient-to-r from-orange-500 via-brand-orange to-amber-500 rounded-3xl p-6 sm:p-10 text-white shadow-lg mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="space-y-2 text-center md:text-left">
-                    <span class="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-wider">
-                        Main Clinic Location
-                    </span>
-                    <h3 class="font-serif text-2xl sm:text-3xl font-bold text-white">Visit Rudraksh Ayurvedic Clinic in Junagadh</h3>
-                    <p class="text-orange-50 text-sm flex items-center justify-center md:justify-start gap-2">
-                        <i class="fa-solid fa-location-dot text-yellow-300 text-lg"></i>
+    <section id="clinic" class="scroll-mt-24 py-16 bg-white border-b border-stone-200">
                         <span class="font-semibold">Near Sardar Baug, Junagadh, Gujarat - 362001</span>
                     </p>
                 </div>
@@ -873,10 +873,23 @@
             if (successModal) successModal.classList.add('hidden');
         }
 
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            if (menu) menu.classList.toggle('hidden');
-        }
+        // HIDE MOBILE BOTTOM NAV DURING ACTIVE SCROLLING
+        let isScrolling;
+        window.addEventListener('scroll', function() {
+            const bottomNav = document.getElementById('mobileBottomNav');
+            if (!bottomNav) return;
+
+            // Hide menu on scroll start
+            bottomNav.classList.add('translate-y-full');
+
+            // Clear previous timeout
+            window.clearTimeout(isScrolling);
+
+            // Show menu after scrolling stops (200ms)
+            isScrolling = setTimeout(function() {
+                bottomNav.classList.remove('translate-y-full');
+            }, 200);
+        }, false);
 
         document.addEventListener('DOMContentLoaded', function() {
             updateCartUI();
